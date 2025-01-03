@@ -671,8 +671,7 @@ void ptrace_detach_and_cont(struct global_state *state, int pid)
 
 void ptrace_set_options(int pid)
 {
-    int options = PTRACE_O_TRACEFORK | PTRACE_O_TRACEVFORK | PTRACE_O_TRACESYSGOOD |
-                  PTRACE_O_TRACECLONE | PTRACE_O_TRACEEXEC | PTRACE_O_TRACEEXIT;
+    int options = PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACECLONE | PTRACE_O_TRACEEXEC | PTRACE_O_TRACEEXIT;
 
     ptrace(PTRACE_SETOPTIONS, pid, NULL, options);
 }
